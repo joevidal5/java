@@ -15,8 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
     <title>Aguante el VAPO</title>
-    <script src="/js/recuperoCreo.js"></script>
-    <script src="/js/registro.js"></script>
+    <script src="js/recuperoCreo.js"></script>
+    <script src="js/registro.js"></script>
 </head>
 
 <body>
@@ -82,12 +82,10 @@
     </div>
     <div class="container" id = "registro" style = "display: none;">
         <div id="formulario">
-            <form action="" id="form" onsubmit="">
-                <p> Usuario: <input type="text" name="usuario" id="usuario"> </p><br>
-                <p> Contrasenia: <input type="text" name="contrasenia" id="contrasenia"></p><br>
-                <p>E-Mail: <input type="text" name="mail" id="mail"></p><br>
-                <button type="submit" onclick="RegistroUsuario()">REGISTRAR</button>
-            </form>
+            <p> Usuario: <input type="text" name="usuario" id="user"> </p><br>
+            <p> Contrasenia: <input type="text" name="contrasenia" id="password"></p><br>
+            <p>E-Mail: <input type="text" name="mail" id="mail"></p><br>
+            <button onclick="RegistroUsuario();">REGISTRAR</button>
         </div>
         <div>
             <a type="button" onclick="mostrar('home');mostrar('sesion');ocultar('registro');" class="btn btn-outline-success">Volver a la pagina principal </a>
