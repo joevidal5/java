@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
     <title>Aguante el VAPO</title>
+    <script src="/js/recuperoCreo.js"></script>
 </head>
 
 <body>
@@ -26,7 +27,7 @@
             </div>
         </div>
         <div style="padding-right:10%;padding-top: 1.5%;" id = "sesion">
-            <a type="button" onclick="mostrar('login');ocultar('home');" class="btn btn-primary">Iniciar sesion</a>
+            <a type="button" onclick="mostrar('login');ocultar('home');ocultar('sesion');" class="btn btn-primary">Iniciar sesion</a>
         </div>
     </header>
     <!-- Inicio de informacion  -->
@@ -57,30 +58,51 @@
         <div  class = "col-sm-10 main-section">
             <div class = "modal-conten">
                 <div class = "col-12 user-img">
+<<<<<<< HEAD
+                    <h1>Iniciar sesión</h1>
+                </div>
+                <form class = "col-12">
+                    <div class = "form-group" id = "user-group">
+                        <input type = "text" class = "form-control" placeholder="Nombre de usuario">
+=======
                     <h1 class = "letraLogin">Iniciar sesión</h1>
                 </div>
                 <form class = "col-12">
                     <div class = "form-group" id = "user">
                         <input type = "text" class = "form-control" placeholder="Nombre de usuario/Correo electrónico">
+>>>>>>> 7240956a2c0f598c2533a717b0783ef372637b3e
                     </div>
                     <div class = "form-group" id = "pass">
                         <input type = "password" class = "form-control" placeholder="Contraseña">
                     </div>
+<<<<<<< HEAD
+                    <button type = "button" class = "btn btn-success" id = "btnLogin"></i>Ingresar</button>
+                    <button type = "button" class = "btn btn-danger" onclick="mostrar('registro');ocultar('sesion');ocultar('login');" id = "btnLogin"></i>Registrarse</button>
+                </form>
+                <div class = "col-12 forgot">
+=======
                     <button type = "submit" class = "btn btn-success" id = "btnLogin"></i>Ingresar</button>
-                    <button type = "submit" class = "btn btn-danger" id = "btnLogin"></i>Registrarse</button>
+                    <button type = "submit" class = "btn btn-danger" id = "btnLogin" onclick="mostrar('register'); ocultar('login'); ocultar('sesion')"></i>Registrarse</button>
                 </form>
                  <div class = "col-12 forgot">
+>>>>>>> 7240956a2c0f598c2533a717b0783ef372637b3e
                     <a href = "#">Recordar contraseña</a>
                 </div>
 
             </div>
         </div>
+<<<<<<< HEAD
     <div class="container" id = "login" style = "display: none;">
         <a type="button" onclick="mostrar('home');ocultar('login');" class="btn btn-outline-success">Volver a la pagina principal </a>
-    </div>
-    <div class="container" id = "register" style = "display: none;">
+=======
         <div>
-            <a type="button" onclick="mostrar('home');ocultar('register');" class="btn btn-outline-success">Volver a la pagina principal </a>
+            <a type="button" onclick="mostrar('home');ocultar('login');" class="btn btn-outline-success">Volver a la pagina principal </a>
+        </div>
+>>>>>>> 0d53955f3d1e2ec97eaafd01bbd034ec583fb075
+    </div>
+    <div class="container" id = "registro" style = "display: none;">
+        <div>
+            <a type="button" onclick="mostrar('home');mostrar('sesion');ocultar('registro');" class="btn btn-outline-success">Volver a la pagina principal </a>
         </div>
     </div>
     <div class="container" id = "equipos" style = "display: none;">
