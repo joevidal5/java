@@ -80,6 +80,14 @@
         </div>
     </div>
     <div class="container" id = "registro" style = "display: none;">
+        <div id="formulario">
+            <form action="" id="form" onsubmit="RegistroUsuario()">
+                <p> Usuario: <input type="text" name="usuario" id="usuario"> </p><br>
+                <p> Contrasenia: <input type="text" name="contrasenia" id="contrasenia"></p><br>
+                <p>E-Mail: <input type="text" name="mail" id="mail"></p><br>
+                <button type="submit">REGISTRAR</button>
+            </form>
+        </div>
         <div>
             <a type="button" onclick="mostrar('home');mostrar('sesion');ocultar('registro');" class="btn btn-outline-success">Volver a la pagina principal </a>
         </div>
