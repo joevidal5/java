@@ -20,9 +20,6 @@ let Pagina = {
     alert("gola")
     _countRegistros: 0,
     _registrados: [],
-    
-    
-    
 }
 
 
