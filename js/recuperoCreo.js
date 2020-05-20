@@ -6,7 +6,6 @@ function ocultar(ocultarPag){
     document.getElementById(ocultarPag).style.display="none";
 }
 
-
 let myStorage = window.localStorage;
 let registros = myStorage.getItem('datajson');
 if(!registros){
