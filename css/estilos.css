@@ -110,6 +110,11 @@ h1.titulo{
     font-family: 'DM Mono', monospace;
 }
 
+.letraLogin{
+    color: var(--color-mas-usado);
+    font-family: 'DM Mono', monospace;
+}
+
 .flex{
     display: flex;
 }
