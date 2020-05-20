@@ -15,6 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
     <title>Aguante el VAPO</title>
+    <script src="/js/recuperoCreo.js"></script>
+    <script src="/js/registro.js"></script>
 </head>
 
 <body>
@@ -26,46 +28,69 @@
             </div>
         </div>
         <div style="padding-right:10%;padding-top: 1.5%;" id = "sesion">
-            <a type="button" onclick="mostrar('login');ocultar('home');" class="btn btn-primary">Iniciar sesion</a>
+            <a type="button" onclick="mostrar('login');ocultar('home');ocultar('sesion');" class="btn btn-primary">Iniciar sesion</a>
         </div>
     </header>
     <!-- Inicio de informacion  -->
     <div class="container" id = "home">
-        <div class="container-fluid" style = "display: flex; padding-top: 1%;">
-            <a type="button" style = "margin-top: 1.3%;" onclick="mostrar('liquidos');ocultar('home');" class="btn btn-danger btn-lg btn-block">E-liquids</a>
+        <div  style = "display: flex; padding-top: 1%;">
+            <a type="button" onclick="mostrar('liquidos');ocultar('home');" class="btn btn-danger btn-lg btn-block">E-liquids</a>
             <a type="button" onclick="mostrar('equipos');ocultar('home');" class="btn btn-warning btn-lg btn-block">Equipos</a>
             <a type="button" onclick="mostrar('repuestos');ocultar('home');" class="btn btn-success btn-lg btn-block">Repuestos</a>
         </div>
+        <div id="carrusel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <h1>Los mejoresn equipos al mejor precio!!!</h1>
+                <img src="img/vapeadores.jpg" class="d-block w-100 grande" alt="...">
+              </div>
+              <div class="carousel-item">
+                <h1>Stick-v8, mejor kit de iniciacion!!!</h1>
+                <img src="img/stick-v8.jpg" class="d-block w-100 grande" alt="...">
+              </div>
+              <div class="carousel-item">
+                <h1>Liquidos importados con sabores frutales!!!!</h1>
+                <img src="img/liquidos2.jpg" class="d-block w-100 grande" alt="...">
+              </div>
+            </div>
+          </div>
     </div>
     <div class="container text-center" id = "login" style = "display: none;">
-            <div  class = "col-sm-10 main-section">
-                <div class = "modal-conten">
-                    <div class = "col-12 user-img">
-                        <h1>Iniciar sesión</h1>
+        <div  class = "col-sm-10 main-section">
+            <div class = "modal-conten">
+                <div class = "col-12 user-img">
+                    <h1 class = "letraLogin">Iniciar sesión</h1>
+                </div>
+                <form class = "col-12">
+                    <div class = "form-group" id = "user-group">
+                        <input type = "text" class = "form-control" placeholder="Nombre de usuario/Correo electrónico">
                     </div>
-                    <form class = "col-12">
-                        <div class = "form-group" id = "user-group">
-                            <input type = "text" class = "form-control" placeholder="Nombre de usuario">
-                        </div>
-                        <div class = "form-group" id = "pass-group">
-                            <input type = "password" class = "form-control" placeholder="Contraseña">
-                        </div>
-                        <button type = "submit" class = "btn btn-success" id = "btnLogin"></i>Ingresar</button>
-                        <button type = "submit" class = "btn btn-danger" id = "btnLogin"></i>Registrarse</button>
-                    </form>
-                    <div class = "col-12 forgot">
-                        <a href = "#">Recordar contraseña</a>
+                    <div class = "form-group" id = "pass-group">
+                        <input type = "password" class = "form-control" placeholder="Contraseña">
                     </div>
-
+                    <button type = "button" class = "btn btn-success" id = "btnLogin"></i>Ingresar</button>
+                    <button type = "button" class = "btn btn-danger" onclick="mostrar('registro');ocultar('sesion');ocultar('login');" id = "btnLogin"></i>Registrarse</button>
+                </form>
+                <div class = "col-12 forgot">
+                    <a href = "#">Recordar contraseña</a>
                 </div>
             </div>
         </div>
-    <div>
-        <a type="button" onclick="mostrar('home');ocultar('login');" class="btn btn-outline-success">Volver a la pagina principal </a>
-    </div>
-    <div class="container" id = "register" style = "display: none;">
         <div>
-            <a type="button" onclick="mostrar('home');ocultar('register');" class="btn btn-outline-success">Volver a la pagina principal </a>
+            <a type="button" onclick="mostrar('home');ocultar('login');mostrar('sesion');" class="btn btn-outline-success">Volver a la pagina principal </a>
+        </div>
+    </div>
+    <div class="container" id = "registro" style = "display: none;">
+        <div id="formulario">
+            <form action="" id="form" onsubmit="">
+                <p> Usuario: <input type="text" name="usuario" id="usuario"> </p><br>
+                <p> Contrasenia: <input type="text" name="contrasenia" id="contrasenia"></p><br>
+                <p>E-Mail: <input type="text" name="mail" id="mail"></p><br>
+                <button type="submit" onclick="RegistroUsuario()">REGISTRAR</button>
+            </form>
+        </div>
+        <div>
+            <a type="button" onclick="mostrar('home');mostrar('sesion');ocultar('registro');" class="btn btn-outline-success">Volver a la pagina principal </a>
         </div>
     </div>
 
@@ -125,7 +150,9 @@
             </small>
         </div>
       </footer>
+    <script src="js/ocultarmostrar.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
 </body>
 </html>
