@@ -25,8 +25,8 @@
                 <img  src="img/vapo.png"  class="img-fluid pequenia">
             </div>
         </div>
-        <div style="padding-right:10%;padding-top: 1.5%; ">
-            <a type="button" onclick="mostrar();" class="btn btn-outline-success">Iniciar sesion</a>
+        <div style="padding-right:10%;padding-top: 1.5%;" id = "sesion">
+            <a type="button" onclick="mostrar('login');ocultar('home');" class="btn btn-outline-success">Iniciar sesion</a>
         </div>
     </header>
     <!-- Inicio de informacion  -->
@@ -37,8 +37,10 @@
             <a type="button"  class="btn btn-success btn-lg btn-block">Repuestos</a>
         </div>
     </div>
-    <div class="container" id = "login">
-
+    <div class="container" id = "login" style = "display: none;">
+        <div>
+            <a type="button" onclick="mostrar('home');ocultar('login');" class="btn btn-outline-success">Volver a la pagina principal </a>
+        </div>
     </div>
     <div class="container" id = "register">
 
