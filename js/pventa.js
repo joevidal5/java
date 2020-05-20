@@ -71,11 +71,20 @@ let PVenta = {
 
 }
 
-function obtenerDatosRegistro(){
+function Registro(){
     let usuario = document.getElementById('usuario').value;
     let contrasenia = document.getElementById("contrasenia").value;
     let mail = document.getElementById("mail").value;
     console.log('Registro Completo');
+    let registrado = {
+        usuarioR: usuario,
+        contraseniaR: contrasenia,
+        mailR: mail,
+    }
+
+    PVenta._usuarios.push() = registrado
+    myStorage.setItem('datajson', JSON.stringify(PVenta._usuarios))
+    
 }
 
 
