@@ -53,10 +53,31 @@
             </div>
           </div>
     </div>
-    <div class="container" id = "login" style = "display: none;">
-        <div>
-            <a type="button" onclick="mostrar('home');ocultar('login');" class="btn btn-outline-success">Volver a la pagina principal </a>
+    <div class="container text-center" id = "login" style = "display: none;">
+            <div  class = "col-sm-10 main-section">
+                <div class = "modal-conten">
+                    <div class = "col-12 user-img">
+                        <h1>Iniciar sesión</h1>
+                    </div>
+                    <form class = "col-12">
+                        <div class = "form-group" id = "user-group">
+                            <input type = "text" class = "form-control" placeholder="Nombre de usuario">
+                        </div>
+                        <div class = "form-group" id = "pass-group">
+                            <input type = "password" class = "form-control" placeholder="Contraseña">
+                        </div>
+                        <button type = "submit" class = "btn btn-success" id = "btnLogin"></i>Ingresar</button>
+                        <button type = "submit" class = "btn btn-danger" id = "btnLogin"></i>Registrarse</button>
+                    </form>
+                    <div class = "col-12 forgot">
+                        <a href = "#">Recordar contraseña</a>
+                    </div>
+
+                </div>
+            </div>
         </div>
+    <div>
+        <a type="button" onclick="mostrar('home');ocultar('login');" class="btn btn-outline-success">Volver a la pagina principal </a>
     </div>
     <div class="container" id = "register" style = "display: none;">
         <div>
