@@ -16,6 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
     <title>Aguante el VAPO</title>
     <script src="/js/recuperoCreo.js"></script>
+    <script src="/js/registro.js"></script>
 </head>
 
 <body>
@@ -81,11 +82,11 @@
     </div>
     <div class="container" id = "registro" style = "display: none;">
         <div id="formulario">
-            <form action="" id="form" onsubmit="RegistroUsuario()">
+            <form action="" id="form" onsubmit="">
                 <p> Usuario: <input type="text" name="usuario" id="usuario"> </p><br>
                 <p> Contrasenia: <input type="text" name="contrasenia" id="contrasenia"></p><br>
                 <p>E-Mail: <input type="text" name="mail" id="mail"></p><br>
-                <button type="submit">REGISTRAR</button>
+                <button type="submit" onclick="RegistroUsuario()">REGISTRAR</button>
             </form>
         </div>
         <div>
@@ -117,5 +118,6 @@
     <script src="js/ocultarmostrar.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
 </body>
 </html>
