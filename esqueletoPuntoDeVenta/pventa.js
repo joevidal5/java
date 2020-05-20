@@ -1,6 +1,7 @@
 let myStorage = window.localStorage;
 
 
+
 let PVenta = { 
     /*  creamos un espacio de nombre PVenta
         vamos a crear un CRUD (Create, Read, Update, Delete)
@@ -69,6 +70,14 @@ let PVenta = {
     }
 
 }
+
+function obtenerDatosRegistro(){
+    let usuario = document.getElementById('usuario').value;
+    let contrasenia = document.getElementById("contrasenia").value;
+    let mail = document.getElementById("mail").value;
+    console.log('Registro Completo');
+}
+
 
 PVenta.init();// metodo obligatorio primero que todos para cargar datos desde el localStorage
 PVenta.getUsuarios();
