@@ -61,6 +61,7 @@ function loginUsuario (){
             myStorage.setItem('usercurrent',JSON.stringify(current_user));
         }
     }
+    document.getElementById('nameSesion').innerHTML = usuario;
     
     
 }

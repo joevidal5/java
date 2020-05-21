@@ -30,6 +30,12 @@
         <div style="padding-right:10%;padding-top: 1.5%;" id = "sesion">
             <a type="button" onclick="mostrar('login');ocultar('home');ocultar('sesion');" class="btn btn-primary">Iniciar sesion</a>
         </div>
+        <div id= "sesionName" style = "display: none; padding-right:10%;padding-top: 1.5%;">
+            <div style = "display: flex;">
+                <h1>Hola,</h1>
+                <h1 id = "nameSesion"></h1>
+            </div>
+        </div>
     </header>
     <!-- Inicio de informacion  -->
     <div class="container" id = "home">
@@ -68,7 +74,7 @@
                     <div class = "form-group">
                         <input type = "password" id = "pass" class = "form-control" placeholder="Contraseña">
                     </div>
-                    <button type = "button" class = "btn btn-success" onclick="loginUsuario(); ocultar('sesion'); ocultar('login')"></i>Ingresar</button>
+                    <button type = "button" class = "btn btn-success" onclick="loginUsuario(); ocultar('sesion'); ocultar('login'); mostrar('sesionName');"></i>Ingresar</button>
                     <button type = "button" class = "btn btn-danger" onclick="mostrar('registro');ocultar('sesion');ocultar('login');" id = "btnLogin"></i>Registrarse</button>
                 </form>
                 <div class = "col-12 forgot">
