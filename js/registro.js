@@ -35,6 +35,31 @@ function RegistroUsuario(){
     
 }
 
+function loginUsuario (){
+    let usuario = document.getElementById("usuario").value;
+    let pass = document.getElementById("pass").value;
+    registrados = myStorage.getItem('datajson');
+    if (registrados){
+        registrados = JSON.parse(registrados);
+    }
+    let registrado = {
+        username: usuario,
+        password: pass,
+        email: usuario,
+        
+    }
+    for (var i = 0; i<registrados.length; i++){
+        console.log(i);
+        console.log('gola');
+        if ((usuario == registrados[i]['username'] || usuario == registrados[i]['email']) && pass == registrados[i]["password"]) {
+            alert('Este usuario se encuentra registrado');
+            window.location.reload(true);
+        }
+    }
+    [{"username":"seba","password":"sadasd","email":"sadasd"}]
+
+}
+
 
 
 
