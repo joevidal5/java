@@ -48,10 +48,6 @@ let PVenta = {
             if (usuario == this._usuarios[i]['username'] || mail == this._usuarios[i]['email']) {
                 alert('Este usuario se encuentra registrado');
                 esta = true;
-                window.location.reload(true);
-                ocultar(document.getElementById('sesion')); 
-                ocultar(document.getElementById('login')); 
-                mostrar(document.getElementById('sesionName'));
             }
         }
     
@@ -60,6 +56,11 @@ let PVenta = {
             this.saveData();
             console.log('update')
             console.log(this._usuarios)
+            alert('registrado')
+           /*  ocultar(document.getElementById('sesion')); */ 
+            ocultar(document.getElementById('registro'));
+            mostrar(document.getElementById('home'));
+            /* mostrar(document.getElementById('sesionName')); */
         }
         
         
@@ -78,7 +79,7 @@ let PVenta = {
         for (var i = 0; i<this._usuarios.length; i++){
             console.log(i);
             console.log('gola');
-            if ((usuario == this._usuarios[i]['username'] || this._usuarios == registrados[i]['email']) && pass == this._usuarios[i]["password"]) {
+            if ((usuario == this._usuarios[i]['username'] || this._usuarios == this._usuarios[i]['email']) && pass == this._usuarios[i]["password"]) {
                 alert('Este usuario se encuentra registrado');
                 esta = true;
                 window.location.reload(true);
@@ -92,7 +93,12 @@ let PVenta = {
 
         }
         if(!esta){
-            alert('El usuario ingresado no se encuentra registrado')
+            alert('El usuario ingresado no se encuentra registrado');
+        }else{
+            ocultar(document.getElementById('sesion')); 
+            ocultar(document.getElementById('login')); 
+           /*  mostrar(document.getElementById('sesionName')); */
+            mostrar(document.getElementById('home'));
         }
         
         
