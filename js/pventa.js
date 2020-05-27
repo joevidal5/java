@@ -17,10 +17,43 @@ let PVenta = {
     _productos:[], // Producto(id,codigo,foto,nombre,idCategoria,precioc,preciov,conteo:[KILO | UNIDAD])
     _facturas:[],
     _detFacturas:[],
+    _currentUser:[],
 
     
     // Metodos de nuestro Punto de Venta
     // Recordar solo agregar los metodos de la Api.
+    RegistroUsuario(){
+        var esta = false;
+        let usuario = document.getElementById("user").value;
+        let contrasenia = document.getElementById("password").value;
+        let mail = document.getElementById("mail").value;
+        let registrado = {
+            username: usuario,
+            password: contrasenia,
+            email: mail,
+            
+        }
+    
+        for (var i = 0; i<registrados.length; i++){
+            console.log(i);
+            console.log('gola');
+            if (usuario == this._usuarios[i]['username'] || mail == this._usuarios[i]['email']) {
+                alert('Este usuario se encuentra registrado');
+                esta = true;
+            }
+        }
+    
+        if (!esta){
+            this._usuarios.push(registrado);
+            this.saveData();
+            console.log('update')
+            console.log(this._usuarios)
+        }
+        
+        
+    },
+
+
 
     getUsuario:function(idUsuario){
        let usuario=null;
@@ -49,7 +82,8 @@ let PVenta = {
             categorias: this._categorias,
             productos: this._productos,
             facturas: this._facturas,
-            detFacturas: this._detFacturas
+            detFacturas: this._detFacturas,
+            currentUser: this._currentUser,
         }
         myStorage.setItem('datajson',JSON.stringify(data));
         console.log('OK');
@@ -63,7 +97,14 @@ let PVenta = {
         this._categorias = data.categorias;
         this._productos = data.productos;
         this._facturas = data.facturas;
-        this._detFacturas = data.detFacturas;       
+        this._detFacturas = data.detFacturas;
+        this._currentUser = data.currentUser;    
+    }else{
+        this._currentUser={
+            curret: 'none',
+            username: 'none',
+        }
+        this.saveData();
     }
     
         

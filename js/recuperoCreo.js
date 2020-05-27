@@ -20,6 +20,19 @@ if(!current_user){
         user: '',
     }
     myStorage.setItem('usercurrent',JSON.stringify(current_user));
+    ocultar(document.getElementById('sesionName'));
+}else{
+    current_user = JSON.parse(current_user)
+    console.log('hawai')
+    console.log(current_user['current'])
+    if (current_user['current'] == 'true'){
+        mostrar(document.getElementById('sesionName'));
+        document.getElementById('nameSesion').innerHTML = current_user['user'];
+    }
+    
+    
+    
+    mostrar(sesionName)
 }
 
 

@@ -15,8 +15,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
     <title>Aguante el VAPO</title>
-    <script src="js/recuperoCreo.js"></script>
-    <script src="js/registro.js"></script>
+    <!-- <script src="js/recuperoCreo.js"></script> -->
+    <!-- <script src="js/registro.js"></script> -->
+    <script src="js/pventa.js"></script>
 </head>
 
 <body>
@@ -30,11 +31,8 @@
         <div style="padding-right:10%;padding-top: 1.5%;" id = "sesion">
             <a type="button" onclick="mostrar('login');ocultar('home');ocultar('sesion');" class="btn btn-primary">Iniciar sesion</a>
         </div>
-        <div id= "sesionName" style = "display: none; padding-right:10%;padding-top: 1.5%;">
-            <div style = "display: flex;">
-                <h1>Hola,</h1>
-                <h1 id = "nameSesion"></h1>
-            </div>
+        <div id= "sesionName" style = "padding-right:10%;padding-top: 1.5%;">
+            <div  id="nameSesion" style = "display: flex;"></div>
         </div>
     </header>
     <!-- Inicio de informacion  -->
@@ -154,6 +152,7 @@
       </footer>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
 
 </body>
 </html>

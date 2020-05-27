@@ -56,12 +56,12 @@ function loginUsuario (){
             window.location.reload(true);
             let current_user = myStorage.getItem('usercurrent');
             current_user = JSON.parse(current_user)
-            current_user['current'] = true;
+            current_user['current'] = 'true';
             current_user['user']= usuario;
             myStorage.setItem('usercurrent',JSON.stringify(current_user));
         }
     }
-    document.getElementById('nameSesion').innerHTML = usuario;
+    
     
     
 }
