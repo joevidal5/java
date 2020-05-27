@@ -112,22 +112,16 @@ let PVenta = {
 
 }
 
-function Registro(){
-    let usuario = document.getElementById('usuario').value;
-    let contrasenia = document.getElementById("contrasenia").value;
-    let mail = document.getElementById("mail").value;
-    console.log('Registro Completo');
-    let registrado = {
-        usuarioR: usuario,
-        contraseniaR: contrasenia,
-        mailR: mail,
-    }
 
-    PVenta._usuarios.push() = registrado
-    myStorage.setItem('datajson', JSON.stringify(PVenta._usuarios))
-    
+
+function mostrar(ocultarPag){
+    document.getElementById(ocultarPag).style.display="block";
 }
 
+function ocultar(ocultarPag){
+    document.getElementById(ocultarPag).style.display="none";
+}
 
 PVenta.init();// metodo obligatorio primero que todos para cargar datos desde el localStorage
 PVenta.getUsuarios();
+
