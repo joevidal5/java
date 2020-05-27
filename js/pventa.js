@@ -1,5 +1,13 @@
 let myStorage = window.localStorage;
 
+function mostrar(ocultarPag){
+    document.getElementById(ocultarPag).style.display="block";
+}
+
+function ocultar(ocultarPag){
+    document.getElementById(ocultarPag).style.display="none";
+}
+
 
 
 let PVenta = { 
@@ -34,12 +42,16 @@ let PVenta = {
             
         }
     
-        for (var i = 0; i<registrados.length; i++){
+        for (var i = 0; i<this._usuarios.length; i++){
             console.log(i);
             console.log('gola');
             if (usuario == this._usuarios[i]['username'] || mail == this._usuarios[i]['email']) {
                 alert('Este usuario se encuentra registrado');
                 esta = true;
+                window.location.reload(true);
+                ocultar(document.getElementById('sesion')); 
+                ocultar(document.getElementById('login')); 
+                mostrar(document.getElementById('sesionName'));
             }
         }
     
@@ -53,7 +65,38 @@ let PVenta = {
         
     },
 
+    loginUsuario (){
+        let esta = false;
+        let usuario = document.getElementById("usuario").value;
+        let pass = document.getElementById("pass").value;
+        let registrado = {
+            username: usuario,
+            password: pass,
+            email: usuario,
+            
+        }
+        for (var i = 0; i<this._usuarios.length; i++){
+            console.log(i);
+            console.log('gola');
+            if ((usuario == this._usuarios[i]['username'] || this._usuarios == registrados[i]['email']) && pass == this._usuarios[i]["password"]) {
+                alert('Este usuario se encuentra registrado');
+                esta = true;
+                window.location.reload(true);
+                
+                this._currentUser={
+                    curret: 'True',
+                    username: usuario,
+                }
+                this.saveData();
+            }
 
+        }
+        if(!esta){
+            alert('El usuario ingresado no se encuentra registrado')
+        }
+        
+        
+    },
 
     getUsuario:function(idUsuario){
        let usuario=null;
@@ -114,13 +157,6 @@ let PVenta = {
 
 
 
-function mostrar(ocultarPag){
-    document.getElementById(ocultarPag).style.display="block";
-}
-
-function ocultar(ocultarPag){
-    document.getElementById(ocultarPag).style.display="none";
-}
 
 PVenta.init();// metodo obligatorio primero que todos para cargar datos desde el localStorage
 PVenta.getUsuarios();
