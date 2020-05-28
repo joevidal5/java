@@ -9,7 +9,6 @@ function ocultar(ocultarPag){
 }
 
 
-
 let PVenta = { 
     /*  creamos un espacio de nombre PVenta
         vamos a crear un CRUD (Create, Read, Update, Delete)
@@ -55,19 +54,17 @@ let PVenta = {
         if (!esta){
             this._usuarios.push(registrado);
             this._currentUser={
-                curret: 'True',
+                current: 'True',
                 username: usuario,
             }
             this.saveData();
             console.log('update')
             console.log(this._usuarios)
             alert('registrado')
-           /*  ocultar(document.getElementById('sesion')); */ 
             ocultar('registro');
             mostrar('home');
+            document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
             mostrar('sesionName');
-            /* mostrar(document.getElementById('sesionName')); */
-            document.getElementById('sesionName').innerHTML = usuario;
         }
         
         
@@ -76,12 +73,6 @@ let PVenta = {
     loginUsuario (){
         let usuario = document.getElementById("usuario").value;
         let pass = document.getElementById("pass").value;
-        let registrado = {
-            username: usuario,
-            password: pass,
-            email: usuario,
-            
-        }
         for (var i = 0; i<this._usuarios.length; i++){
             console.log(i);
             console.log('gola');
@@ -90,13 +81,13 @@ let PVenta = {
                 esta = true;
                 ocultar('sesion'); 
                 ocultar('login'); 
-            /*  mostrar(document.getElementById('sesionName')); */
                 mostrar('home');
-    
+                mostrar('sesionName');
                 this._currentUser={
-                    curret: 'True',
+                    current: 'True',
                     username: usuario,
                 }
+                document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
                 this.saveData();
             }
 
@@ -153,11 +144,12 @@ let PVenta = {
         this._currentUser = data.currentUser;
         if (this._currentUser['current'] == 'True'){
             document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
+            ocultar('sesion');
             mostrar('sesionName');
         }  
     }else{
         this._currentUser={
-            curret: 'none',
+            current: 'none',
             username: 'none',
         }
         this.saveData();
