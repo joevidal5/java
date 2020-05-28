@@ -131,6 +131,10 @@ let PVenta = {
         myStorage.setItem('datajson',JSON.stringify(data));
         console.log('OK');
     },
+
+    cerrarSesion(){
+
+    },
     init:function(){
         //cargamos todos nuestros array del localStorage
     let data = myStorage.getItem('datajson');
@@ -143,15 +147,9 @@ let PVenta = {
         this._detFacturas = data.detFacturas;
         this._currentUser = data.currentUser;
         if (this._currentUser['current'] == 'True'){
-<<<<<<< HEAD
-            alert('hay current');
-            
-            document.getElementById('nombreUsuario').innerHTML = this._currentUser['user'];
-=======
             document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
             ocultar('sesion');
             mostrar('sesionName');
->>>>>>> 54613f932bd579381601c43d0a9c186460012136
         }  
     }else{
         this._currentUser={
