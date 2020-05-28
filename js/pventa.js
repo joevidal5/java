@@ -201,9 +201,6 @@ let PVenta = {
 
 }
 
-
-
-
 PVenta.init();// metodo obligatorio primero que todos para cargar datos desde el localStorage
 PVenta.getUsuarios();
 

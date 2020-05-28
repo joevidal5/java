@@ -34,21 +34,24 @@
             <div style = "display: flex;">
                 <h1>Hola, </h1>
                 <h1 id="nameSesion" ></h1>
-                
             </div>
-            <div style="display: flex;">
-                <button class="btn btn-primary btn-small" onclick="PVenta.cerrarSesion();">Cerrar Sesion</button>
-                <button class= "btn btn-primary btn-small" onclick=" ocultar('home'); PVenta.cargoParaEditar();">Modificar datos</button>
-                <button class="btn btn-primary btn-small">Borrar usuario</button>
-            </div>
+            <div class="dropdown" align = "right">
+                <button type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src = "img/ajustes1.png" class = "img-fluid"></img>
+                </button>
+                <div class="dropdown-menu">
+                    <button class="dropdown-item" onclick=" ocultar('home'); PVenta.cargoParaEditar();mostrar('modificacion');">Modificar datos</button>
+                    <button class="dropdown-item" >Borrar usuario</button>
+                    <button class="dropdown-item" onclick="PVenta.cerrarSesion();" >Cerrar Sesion</button>
+              </div>
         </div>
     </header>
     <!-- Inicio de informacion  -->
     <div class="container" id = "home">
         <div  style = "display: flex; padding-top: 1%;">
-            <a type="button" onclick="mostrar('liquidos');ocultar('home');" class="btn btn-danger btn-lg btn-block">E-liquids</a>
-            <a type="button" onclick="mostrar('equipos');ocultar('home');" class="btn btn-warning btn-lg btn-block">Equipos</a>
-            <a type="button" onclick="mostrar('repuestos');ocultar('home');" class="btn btn-success btn-lg btn-block">Repuestos</a>
+            <button type="button" onclick="mostrar('liquidos');ocultar('home');" class="btn btn-danger btn-lg btn-block">E-liquids</button>
+            <button type="button" onclick="mostrar('equipos');ocultar('home');" class="btn btn-warning btn-lg btn-block">Equipos</button>
+            <button type="button" onclick="mostrar('repuestos');ocultar('home');" class="btn btn-success btn-lg btn-block">Repuestos</button>
         </div>
         <div id="carrusel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -103,7 +106,7 @@
             <a type="button" onclick="mostrar('home');mostrar('sesion');ocultar('registro');" class="btn btn-outline-success">Volver a la pagina principal </a>
         </div>
     </div>
-    <div class="container" id="modificacion" style = "">
+    <div class="container" id="modificacion" style = "display: none;">
         <div>
             <p> Usuario: <input type="text" name="usuario" id="userEdit"> </p><br>
             <p> Contrasenia: <input type="text" name="contrasenia" id="passwordEdit"></p><br>
@@ -169,7 +172,8 @@
     <script src="js/pventa.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>  
 </body>
 </html>
