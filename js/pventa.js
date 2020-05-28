@@ -112,8 +112,35 @@ let PVenta = {
     deleteUsuario(idUsuario){
 
     },
-    updateUsuario(usuario){
+    
+    cargoParaEditar(){
+        console.log("entre update")
+        let usuario = this._currentUser['username'] 
+        for(var i = 0; i<this._cantidad; i++){
+            if(usuario == this._usuarios[i]['username']){
+                console.log('encontre coincidencia')
+                document.getElementById('userEdit').value = usuario;
+                document.getElementById('passwordEdit').value = this._usuarios[i]['password'];
+                document.getElementById('mailEdit').value = this._usuarios[i]['email'];
+            }
+        }
+    },
 
+    updateUsuario(){
+        let usuario = this._currentUser['username'] 
+        for(var i = 0; i<this._cantidad; i++){
+            if(usuario == this._usuarios[i]['username']){
+                let usuario = document.getElementById("userEdit").value;
+                let contrasenia = document.getElementById("passwordEdit").value;
+                let mail = document.getElementById("mailEdit").value;
+                this._usuarios[i]['username'] = usuario;
+                this._usuarios[i]['email'] = mail;
+                this._usuarios[i]['password'] = contrasenia;
+                this._currentUser['username'] = usuario;
+                this.saveData();
+                window.location.reload(true);
+            }
+        }
     },
 
     addUsuario(usuario){
