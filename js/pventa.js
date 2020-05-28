@@ -26,6 +26,7 @@ let PVenta = {
     _detFacturas:[],
     _currentUser:[],
 
+    _cantidad : 0,
     
     // Metodos de nuestro Punto de Venta
     // Recordar solo agregar los metodos de la Api.
@@ -35,11 +36,13 @@ let PVenta = {
         let contrasenia = document.getElementById("password").value;
         let mail = document.getElementById("mail").value;
         let registrado = {
+            iduser: this._cantidad + 1,
             username: usuario,
             password: contrasenia,
             email: mail,
             
         }
+        this._cantidad = this._cantidad + 1;
         
     
         for (var i = 0; i<this._usuarios.length; i++){
@@ -127,14 +130,19 @@ let PVenta = {
             facturas: this._facturas,
             detFacturas: this._detFacturas,
             currentUser: this._currentUser,
+            cantidadUsers: this._cantidad,
         }
         myStorage.setItem('datajson',JSON.stringify(data));
         console.log('OK');
     },
 
     cerrarSesion(){
-
+        this._currentUser['current'] = 'none';
+        this._currentUser['username'] = 'none'
+        this.saveData();
+        window.location.reload(true);
     },
+
     init:function(){
         //cargamos todos nuestros array del localStorage
     let data = myStorage.getItem('datajson');
@@ -146,6 +154,8 @@ let PVenta = {
         this._facturas = data.facturas;
         this._detFacturas = data.detFacturas;
         this._currentUser = data.currentUser;
+        this._cantidad = data.cantidadUsers;
+        console.log(this._cantidad)
         if (this._currentUser['current'] == 'True'){
             document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
             ocultar('sesion');
