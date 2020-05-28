@@ -65,7 +65,9 @@ let PVenta = {
            /*  ocultar(document.getElementById('sesion')); */ 
             ocultar('registro');
             mostrar('home');
+            mostrar('sesionName');
             /* mostrar(document.getElementById('sesionName')); */
+            document.getElementById('sesionName').innerHTML = usuario;
         }
         
         
@@ -149,10 +151,10 @@ let PVenta = {
         this._facturas = data.facturas;
         this._detFacturas = data.detFacturas;
         this._currentUser = data.currentUser;
-        /* if (this._currentUser['current'] == 'true'){
+        if (this._currentUser['current'] == 'True'){
+            document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
             mostrar('sesionName');
-            document.getElementById('nameSesion').innerHTML = this._currentUser['user'];
-        }  */   
+        }  
     }else{
         this._currentUser={
             curret: 'none',
