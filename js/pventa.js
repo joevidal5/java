@@ -58,8 +58,8 @@ let PVenta = {
             console.log(this._usuarios)
             alert('registrado')
            /*  ocultar(document.getElementById('sesion')); */ 
-            ocultar(document.getElementById('registro'));
-            mostrar(document.getElementById('home'));
+            ocultar('registro');
+            mostrar('home');
             /* mostrar(document.getElementById('sesionName')); */
         }
         
@@ -95,10 +95,10 @@ let PVenta = {
         if(!esta){
             alert('El usuario ingresado no se encuentra registrado');
         }else{
-            ocultar(document.getElementById('sesion')); 
-            ocultar(document.getElementById('login')); 
+            ocultar('sesion'); 
+            ocultar('login'); 
            /*  mostrar(document.getElementById('sesionName')); */
-            mostrar(document.getElementById('home'));
+            mostrar('home');
         }
         
         
@@ -109,6 +109,7 @@ let PVenta = {
        PVenta._usuarios.map((u)=> {if (u.id == idUsuario) return usuario=u});
        return usuario;
     },
+
     getUsuarios(){
         return PVenta._usuarios;
     },
@@ -125,6 +126,7 @@ let PVenta = {
        this.saveData();
 
     },
+
     saveData(){
         let data={
             usuarios:this._usuarios,
