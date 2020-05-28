@@ -41,6 +41,7 @@ let PVenta = {
             email: mail,
             
         }
+        
     
         for (var i = 0; i<this._usuarios.length; i++){
             console.log(i);
@@ -53,6 +54,10 @@ let PVenta = {
     
         if (!esta){
             this._usuarios.push(registrado);
+            this._currentUser={
+                curret: 'True',
+                username: usuario,
+            }
             this.saveData();
             console.log('update')
             console.log(this._usuarios)
@@ -67,7 +72,6 @@ let PVenta = {
     },
 
     loginUsuario (){
-        let esta = false;
         let usuario = document.getElementById("usuario").value;
         let pass = document.getElementById("pass").value;
         let registrado = {
@@ -82,8 +86,11 @@ let PVenta = {
             if ((usuario == this._usuarios[i]['username'] || this._usuarios == this._usuarios[i]['email']) && pass == this._usuarios[i]["password"]) {
                 alert('Este usuario se encuentra registrado');
                 esta = true;
-                window.location.reload(true);
-                
+                ocultar('sesion'); 
+                ocultar('login'); 
+            /*  mostrar(document.getElementById('sesionName')); */
+                mostrar('home');
+    
                 this._currentUser={
                     curret: 'True',
                     username: usuario,
@@ -91,14 +98,6 @@ let PVenta = {
                 this.saveData();
             }
 
-        }
-        if(!esta){
-            alert('El usuario ingresado no se encuentra registrado');
-        }else{
-            ocultar('sesion'); 
-            ocultar('login'); 
-           /*  mostrar(document.getElementById('sesionName')); */
-            mostrar('home');
         }
         
         
@@ -149,7 +148,11 @@ let PVenta = {
         this._productos = data.productos;
         this._facturas = data.facturas;
         this._detFacturas = data.detFacturas;
-        this._currentUser = data.currentUser;    
+        this._currentUser = data.currentUser;
+        /* if (this._currentUser['current'] == 'true'){
+            mostrar('sesionName');
+            document.getElementById('nameSesion').innerHTML = this._currentUser['user'];
+        }  */   
     }else{
         this._currentUser={
             curret: 'none',

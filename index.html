@@ -32,7 +32,7 @@
             <a type="button" onclick="mostrar('login');ocultar('home');ocultar('sesion');" class="btn btn-primary">Iniciar sesion</a>
         </div>
         <div id= "sesionName" style = "padding-right:10%;padding-top: 1.5%;">
-            <div  id="nameSesion" style = "display: flex;"></div>
+            <div  id="nameSesion" style = "display: flex; display: none;"> <p>Hola, <h2 id="nombreUsuario"></h2></p></div>
         </div>
     </header>
     <!-- Inicio de informacion  -->
@@ -84,7 +84,7 @@
             <a type="button" onclick="mostrar('home');ocultar('login');mostrar('sesion');" class="btn btn-outline-success">Volver a la pagina principal </a>
         </div>
     </div>
-    <div class="container" id = "registro" style = "display: none;">
+    <div class="container" id="registro" style = "display: none;">
         <div id="formulario">
             <p> Usuario: <input type="text" name="usuario" id="user"> </p><br>
             <p> Contrasenia: <input type="text" name="contrasenia" id="password"></p><br>
