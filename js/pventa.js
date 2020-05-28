@@ -55,7 +55,7 @@ let PVenta = {
         if (!esta){
             this._usuarios.push(registrado);
             this._currentUser={
-                curret: 'True',
+                current: 'True',
                 username: usuario,
             }
             this.saveData();
@@ -149,13 +149,14 @@ let PVenta = {
         this._facturas = data.facturas;
         this._detFacturas = data.detFacturas;
         this._currentUser = data.currentUser;
-        /* if (this._currentUser['current'] == 'true'){
-            mostrar('sesionName');
-            document.getElementById('nameSesion').innerHTML = this._currentUser['user'];
-        }  */   
+        if (this._currentUser['current'] == 'True'){
+            alert('hay current');
+            
+            document.getElementById('nombreUsuario').innerHTML = this._currentUser['user'];
+        }  
     }else{
         this._currentUser={
-            curret: 'none',
+            current: 'none',
             username: 'none',
         }
         this.saveData();
