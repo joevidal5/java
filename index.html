@@ -35,7 +35,7 @@
                 <h1>Hola, </h1>
                 <h1 id="nameSesion" ></h1>
             </div>
-            <div class="dropdown" align = "right">
+            <div class="dropdown" align = "right" style = "display: flex;">
                 <button type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src = "img/ajustes1.png" class = "img-fluid"></img>
                 </button>
@@ -47,6 +47,7 @@
                 <button type="button" class="btn btn-primary " id="botonCompras">
                     <img src = "img/carrito.png" onclick="mostrar('carrito'); ocultar('home'); ocultar('equipos'); ocultar('liquidos');ocultar('repuestos'); ocultar('sesion')" class = "img-fluid"></img>
                 </button>
+                <button class="btn btn-primary" id="botonAgregar" style="display: none;">Agregar producto</button>
             </div>
         </div>
     </header>
@@ -72,12 +73,8 @@
                 <img src="img/liquidos2.jpg" class="d-block w-100 grande" alt="...">
               </div>
             </div>
-<<<<<<< HEAD
             <iframe src="https://www.youtube.com/embed/dXBohfjc4WA" width="680" height="480" allowfullscreen></iframe>
           </div>
-=======
-        </div>
->>>>>>> e9fadd08d0a8eb97dab49662203ab531bcff5159
     </div>
     <div class="container text-center" id = "login" style = "display: none;">
         <div  class = "col-sm-10 main-section">

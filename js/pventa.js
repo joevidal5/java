@@ -1,7 +1,7 @@
 let myStorage = window.localStorage;
 
-function mostrar(ocultarPag){
-    document.getElementById(ocultarPag).style.display="block";
+function mostrar(mostrarPag){
+    document.getElementById(mostrarPag).style.display="block";
 }
 
 function ocultar(ocultarPag){
@@ -32,7 +32,7 @@ let PVenta = {
     _detFacturas:[],
     _currentUser:[],
 
-    _cantidad : 0,
+    _cantidad : 1,
     
     // Metodos de nuestro Punto de Venta
     // Recordar solo agregar los metodos de la Api.
@@ -99,7 +99,9 @@ let PVenta = {
                 document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
                 this.saveData();
             }
-
+            if ('admin' == this._currentUser['username']){
+                mostrar('botonAgregar');
+            }
         }
         
         
@@ -220,7 +222,7 @@ let PVenta = {
         this._currentUser={
             current: 'none',
             username: 'none',
-        }s
+        }
         this.saveData();
     }
     
