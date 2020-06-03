@@ -116,7 +116,29 @@ let PVenta = {
     },
 
     deleteUsuario(idUsuario){
+       
+    },
 
+    deleteCurrentUser(){
+        
+        for (let i = 0; i<this._cantidad; i++){
+            if (this._currentUser['username'] == this._usuarios[i]['username']){
+                console.log('lo encontre');
+                console.log("aca esta i:"+i);
+                if(i == 0){
+                    PVenta._usuarios.splice(0);
+                }else{
+                    PVenta._usuarios.splice(i, i);
+                }
+                console.log(PVenta._usuarios);
+                this._currentUser['current'] = 'none';
+                this._currentUser['username'] = 'none';
+                this._cantidad = this._cantidad - 1 
+                this.saveData();
+                window.location.reload(true); 
+            }
+        }
+            
     },
     
     cargoParaEditar(){
@@ -171,7 +193,7 @@ let PVenta = {
 
     cerrarSesion(){
         this._currentUser['current'] = 'none';
-        this._currentUser['username'] = 'none'
+        this._currentUser['username'] = 'none';
         this.saveData();
         window.location.reload(true);
     },
