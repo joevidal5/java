@@ -25,7 +25,7 @@ let PVenta = {
     }
     ], //  Usuario(id,usuario,clave)
                   //  Ejemplo  {id:0,usuario:'admin',clave:'root'}
-    _categorias:[], // Categoria (id, nombre , idPadre , detalle, porcgancia) 
+    _categorias:[{idCategori : 1, nameCategori: 'liquidos'}, {idCategori : 2, nameCategori: 'repuestos'}, {idCategori : 3, nameCategori: 'equipos'}], // Categoria (id, nombre , idPadre , detalle, porcgancia) 
                     // Ejemplo Categoria {id:0,nombre:'General',idPadre:0,detalle:'Todas las Categorias',porcganancia:35.5}
     _productos:[], // Producto(id,codigo,foto,nombre,idCategoria,precioc,preciov,conteo:[KILO | UNIDAD])
     _facturas:[],
@@ -211,12 +211,13 @@ let PVenta = {
         this._detFacturas = data.detFacturas;
         this._currentUser = data.currentUser;
         this._cantidad = data.cantidadUsers;
-        console.log(this._cantidad)
+
         if (this._currentUser['current'] == 'True'){
             document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
             ocultar('sesion');
             mostrar('sesionName');
             if (this._usuarios[0]['username']== this._currentUser['username']){
+                console.log('no anda')
                 mostrar('botonAgregar');
             }
         }  
