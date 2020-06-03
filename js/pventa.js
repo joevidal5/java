@@ -17,7 +17,13 @@ let PVenta = {
     */
 
     
-    _usuarios:[], //  Usuario(id,usuario,clave)
+    _usuarios:[{
+        iduser: 0,
+        username: 'admin',
+        password: 'admin',
+        email: 'admin@itecriocuarto.org.ar',
+    }
+    ], //  Usuario(id,usuario,clave)
                   //  Ejemplo  {id:0,usuario:'admin',clave:'root'}
     _categorias:[], // Categoria (id, nombre , idPadre , detalle, porcgancia) 
                     // Ejemplo Categoria {id:0,nombre:'General',idPadre:0,detalle:'Todas las Categorias',porcganancia:35.5}
@@ -192,7 +198,7 @@ let PVenta = {
         this._currentUser={
             current: 'none',
             username: 'none',
-        }
+        }s
         this.saveData();
     }
     
@@ -203,4 +209,3 @@ let PVenta = {
 
 PVenta.init();// metodo obligatorio primero que todos para cargar datos desde el localStorage
 PVenta.getUsuarios();
-
