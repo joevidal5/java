@@ -99,9 +99,7 @@ let PVenta = {
                 document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
                 this.saveData();
             }
-            if ('admin' == this._currentUser['username']){
-                mostrar('botonAgregar');
-            }
+            window.location.reload(true);
         }
         
         
@@ -218,6 +216,9 @@ let PVenta = {
             document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
             ocultar('sesion');
             mostrar('sesionName');
+            if (this._usuarios[0]['username']== this._currentUser['username']){
+                mostrar('botonAgregar');
+            }
         }  
     }else{
         this._currentUser={
