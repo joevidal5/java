@@ -30,20 +30,26 @@
         <div style="padding-right:10%;padding-top: 1.5%;" id = "sesion">
             <a type="button" onclick="mostrar('login');ocultar('home');ocultar('sesion');" class="btn btn-primary">Iniciar sesion</a>
         </div>
-        <div id= "sesionName" style = "padding-right:10%;padding-top: 1.5%; display: none;">
+        <div id= "sesionName" style = "padding-right:10%;padding-top: 1.5%; display: none, flex;">
             <div style = "display: flex;">
                 <h1>Hola, </h1>
                 <h1 id="nameSesion" ></h1>
             </div>
-            <div class="dropdown" align = "right">
-                <button type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src = "img/ajustes1.png" class = "img-fluid"></img>
-                </button>
-                <div class="dropdown-menu">
-                    <button class="dropdown-item" onclick=" ocultar('home'); PVenta.cargoParaEditar();mostrar('modificacion');">Modificar datos</button>
-                    <button class="dropdown-item" >Borrar usuario</button>
-                    <button class="dropdown-item" onclick="PVenta.cerrarSesion();" >Cerrar Sesion</button>
-              </div>
+            <div style="display: flex; padding-left: 34%;">
+                <div class="dropdown" align = "right">
+                    <button type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src = "img/ajustes1.png" class = "img-fluid"></img>
+                    </button>
+                    <button type="button" class="btn btn-warning" id="botonVender">Vender un producto</button>
+                    <div class="dropdown-menu">
+                        <button class="dropdown-item" onclick=" ocultar('home'); PVenta.cargoParaEditar();mostrar('modificacion');">Modificar datos</button>
+                        <button class="dropdown-item" >Borrar usuario</button>
+                        <button class="dropdown-item" onclick="PVenta.cerrarSesion();" >Cerrar Sesion</button>
+                  </div>
+            </div>
+
+              
+
         </div>
     </header>
     <!-- Inicio de informacion  -->
