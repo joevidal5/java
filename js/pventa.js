@@ -99,11 +99,7 @@ let PVenta = {
                 document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
                 this.saveData();
             }
-<<<<<<< HEAD
             window.location.reload(true);
-=======
-
->>>>>>> beee0ed80376108193ea0bacb138a9e0fa110c2f
         }
         
         
