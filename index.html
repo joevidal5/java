@@ -43,7 +43,11 @@
                     <button class="dropdown-item" onclick=" ocultar('home'); PVenta.cargoParaEditar();mostrar('modificacion');">Modificar datos</button>
                     <button class="dropdown-item" >Borrar usuario</button>
                     <button class="dropdown-item" onclick="PVenta.cerrarSesion();" >Cerrar Sesion</button>
-              </div>
+                </div>
+                <button type="button" class="btn btn-primary " id="botonCompras">
+                    <img src = "img/carrito.png" onclick="mostrar('carrito'); ocultar('home'); ocultar('equipos'); ocultar('liquidos');ocultar('repuestos'); ocultar('sesion')" class = "img-fluid"></img>
+                </button>
+            </div>
         </div>
     </header>
     <!-- Inicio de informacion  -->
@@ -68,7 +72,7 @@
                 <img src="img/liquidos2.jpg" class="d-block w-100 grande" alt="...">
               </div>
             </div>
-          </div>
+        </div>
     </div>
     <div class="container text-center" id = "login" style = "display: none;">
         <div  class = "col-sm-10 main-section">
@@ -95,11 +99,14 @@
             <a type="button" onclick="mostrar('home');ocultar('login');mostrar('sesion');" class="btn btn-outline-success">Volver a la pagina principal </a>
         </div>
     </div>
+    <div class="container" id="carrito" style = "display: none;">
+        <a type="button" onclick="mostrar('home');ocultar('carrito')" class="btn btn-outline-success">Volver a la pagina principal </a>
+    </div>
     <div class="container" id="registro" style = "display: none;">
         <div id="formulario">
             <p> Usuario: <input type="text" name="usuario" id="user"> </p><br>
             <p> Contrasenia: <input type="text" name="contrasenia" id="password"></p><br>
-            <p>E-Mail: <input type="text" name="mail" id="mail"></p><br>
+            <p> E-Mail: <input type="text" name="mail" id="mail"></p><br>
             <button onclick="PVenta.RegistroUsuario();">REGISTRAR</button>
         </div>
         <div>
