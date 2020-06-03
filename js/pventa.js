@@ -32,7 +32,7 @@ let PVenta = {
     _detFacturas:[],
     _currentUser:[],
 
-    _cantidad : 0,
+    _cantidad : 1,
     
     // Metodos de nuestro Punto de Venta
     // Recordar solo agregar los metodos de la Api.
@@ -120,22 +120,23 @@ let PVenta = {
     },
 
     deleteCurrentUser(){
-        
+        console.log("asdasda")
         for (let i = 0; i<this._cantidad; i++){
+            console.log("pruba : "+i)
             if (this._currentUser['username'] == this._usuarios[i]['username']){
-                console.log('lo encontre');
-                console.log("aca esta i:"+i);
-                if(i == 0){
-                    PVenta._usuarios.splice(0);
+                if(this._currentUser['username'] == "admin"){
+                    alert("NO SE PUEDE BORRAR EL ADMIN SOS PELOTUDO O ESTAS PRACTICANDO");
                 }else{
+                    console.log('lo encontre');
+                    console.log("aca esta i:"+i);
                     PVenta._usuarios.splice(i, i);
-                }
-                console.log(PVenta._usuarios);
-                this._currentUser['current'] = 'none';
-                this._currentUser['username'] = 'none';
-                this._cantidad = this._cantidad - 1 
-                this.saveData();
-                window.location.reload(true); 
+                    console.log(PVenta._usuarios);
+                    this._currentUser['current'] = 'none';
+                    this._currentUser['username'] = 'none';
+                    this._cantidad = this._cantidad - 1 
+                    this.saveData();
+                    window.location.reload(true); 
+                } 
             }
         }
             
@@ -220,7 +221,7 @@ let PVenta = {
         this._currentUser={
             current: 'none',
             username: 'none',
-        }s
+        }
         this.saveData();
     }
     
