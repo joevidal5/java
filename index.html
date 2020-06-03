@@ -73,16 +73,16 @@
                 <img src="img/liquidos2.jpg" class="d-block w-100 grande" alt="...">
               </div>
             </div>
-            <iframe src="https://www.youtube.com/embed/dXBohfjc4WA" width="680" height="480" allowfullscreen></iframe>
-          </div>
+        </div>
     </div>
+    <!--Inicio de sesión-->
     <div class="container text-center" id = "login" style = "display: none;">
         <div  class = "col-sm-10 main-section">
             <div class = "modal-conten">
                 <div class = "col-12 user-img">
                     <h1 class = "letraLogin">Iniciar sesión</h1>
                 </div>
-                <form class = "col-12">
+                <form class = "col-12" onsubmit="return false;">
                     <div class = "form-group">
                         <input type = "text" id = "usuario" class = "form-control" placeholder="Nombre de usuario/Correo electrónico">
                     </div>
@@ -104,6 +104,7 @@
     <div class="container" id="carrito" style = "display: none;">
         <a type="button" onclick="mostrar('home');ocultar('carrito')" class="btn btn-outline-success">Volver a la pagina principal </a>
     </div>
+    <!--Registro-->
     <div class="container" id="registro" style = "display: none;">
         <div id="formulario">
             <p> Usuario: <input type="text" name="usuario" id="user"> </p><br>
@@ -115,6 +116,7 @@
             <a type="button" onclick="mostrar('home');mostrar('sesion');ocultar('registro');" class="btn btn-outline-success">Volver a la pagina principal </a>
         </div>
     </div>
+    <!--Modificar usuario-->
     <div class="container" id="modificacion" style = "display: none;">
         <div>
             <p> Usuario: <input type="text" name="usuario" id="userEdit"> </p><br>
@@ -123,6 +125,7 @@
             <button onclick="PVenta.updateUsuario();">Guardar Cambios</button>
         </div>
     </div>
+    <!--Equipos-->
     <div class="container" id = "equipos" style = "display: none;">
         <div  class="d-flex justify-content-center">
             <h1>VAPER'S</h1>
@@ -160,17 +163,19 @@
             <a type="button" onclick="mostrar('home');ocultar('equipos');" class="btn btn-outline-success">Volver a la pagina principal </a>
         </div>
     </div>
-
+    <!--Liquidos-->
     <div class="container" id = "liquidos" style = "display: none;">
         <div>
             <a type="button" onclick="mostrar('home');ocultar('liquidos');" class="btn btn-outline-success">Volver a la pagina principal </a>
         </div>
     </div>
+    <!--Repuestos-->
     <div class="container" id = "repuestos" style = "display: none;">
         <div>
             <a type="button" onclick="mostrar('home');ocultar('repuestos');" class="btn btn-outline-success">Volver a la pagina principal </a>
         </div>
     </div>
+    <!--Administrador-->
     <div class="container" id ="administrador" style ="display: none;">
         <div>
             <button type="button" id="bUsuario" class="btn btn-success btn-lg btn-block">Borrar Usuario</button>
