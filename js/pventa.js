@@ -1,7 +1,7 @@
 let myStorage = window.localStorage;
 
-function mostrar(mostrarPag){
-    document.getElementById(mostrarPag).style.display="block";
+function mostrar(ocultarPag){
+    document.getElementById(ocultarPag).style.display="block";
 }
 
 function ocultar(ocultarPag){
@@ -99,7 +99,11 @@ let PVenta = {
                 document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
                 this.saveData();
             }
+<<<<<<< HEAD
             window.location.reload(true);
+=======
+
+>>>>>>> beee0ed80376108193ea0bacb138a9e0fa110c2f
         }
         
         
@@ -232,6 +236,22 @@ let PVenta = {
     }
 
 }
+
+document.getElementById("pass")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("button").click();
+    }
+});
+
+document.getElementById("mail")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("buttonReg").click();
+    }
+});
 
 PVenta.init();// metodo obligatorio primero que todos para cargar datos desde el localStorage
 PVenta.getUsuarios();
