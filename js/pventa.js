@@ -33,6 +33,7 @@ let PVenta = {
     _currentUser:[],
 
     _cantidad : 1,
+    _cantidadProductos: 0,
     
     // Metodos de nuestro Punto de Venta
     // Recordar solo agregar los metodos de la Api.
@@ -78,6 +79,29 @@ let PVenta = {
         
         
     },
+
+    cargarProducto(){
+        this._cantidadProductos = this._cantidadProductos + 1 ;
+        let idp = this._cantidadProductos;
+        let categoriap = document.getElementById('selecCategori').value;
+        console.log(categoriap)
+        let nombreP = document.getElementById('nombreProducto').value;
+        let precioP = document.getElementById('precioProducto').value;
+        let descripP = document.getElementById('descripcionProducto').value;
+        let cantidaP = document.getElementById('cantidadProducto').value;
+        let producto = {
+            idP: idp,
+            nombre: nombreP,
+            precio: precioP,
+            decripcion: descripP,
+            stock: cantidaP,
+            categoria: categoriap,
+        }
+        this._productos.push(producto);
+        this.saveData();
+
+    },
+
 
     loginUsuario (){
         let usuario = document.getElementById("usuario").value;
@@ -187,6 +211,7 @@ let PVenta = {
             detFacturas: this._detFacturas,
             currentUser: this._currentUser,
             cantidadUsers: this._cantidad,
+            cantidadProductos: this._cantidadProductos,
         }
         myStorage.setItem('datajson',JSON.stringify(data));
         console.log('OK');
@@ -219,6 +244,8 @@ let PVenta = {
             if (this._usuarios[0]['username']== this._currentUser['username']){
                 console.log('no anda')
                 mostrar('botonAgregar');
+            }else{
+                ocultar('botonAgregar')
             }
         }  
     }else{
