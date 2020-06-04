@@ -89,8 +89,10 @@ let PVenta = {
         let precioP = document.getElementById('precioProducto').value;
         let descripP = document.getElementById('descripcionProducto').value;
         let cantidaP = document.getElementById('cantidadProducto').value;
+        let imgP = document.getElementById('imagenProducto').value;
         let producto = {
             idP: idp,
+            img: imgP,
             nombre: nombreP,
             precio: precioP,
             decripcion: descripP,
