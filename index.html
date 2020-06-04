@@ -15,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap" rel="stylesheet">
     <title>Aguante el VAPO</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <!-- <script src="js/recuperoCreo.js"></script> -->
     <!-- <script src="js/registro.js"></script> -->
 </head>
@@ -233,23 +234,23 @@
             </h5>
             <hr>
             <h3>Envianos tu consulta en el siguiente formulario!!!</h3>
-            <form action="POST">
+            <form >
                 <div class="form-row">
                     <div class="col">
-                        <input type="text" class="form-control" style="margin: 1%;" placeholder="Nombre Completo">
+                        <input  id="nameQuestion" type="text" class="form-control" style="margin: 1%;" placeholder="Nombre Completo">
                     </div>
                     <div class="col">
-                        <input type="text" name="email" style="margin: 1%;" class="form-control" placeholder="E-mail">
+                        <input id="mailQuestion" type="text" name="email" style="margin: 1%;" class="form-control" placeholder="E-mail">
                     </div>
                 </div>
                 <div class="col">
                     <textarea class="form-control" id="mensaje" rows="3" style="margin: 1%;" placeholder="Escriba su consulta aqui"></textarea>
                 </div>
-                <button class="btn btn-primary "  value="Enviar consulta" style="margin: 1%;" class="btn btn-primary btn-block">Enviar formulario</button>
+                <input type="button" value="Enviar consulta" style="margin: 1%;" class="btn btn-primary btn-block" onclick="PVenta.sendEmail()"></input>
             </form>
         </div>
         <div>
-            <a type="button" onclick="mostrar('home');ocultar('faqs');" class="btn btn-outline-success">Volver a la pagina principal </a>
+            <a type="button" onclick="mostrar('home');ocultar('faqs'); " class="btn btn-outline-success">Volver a la pagina principal </a>
         </div>
       </div>
       <!-- Finalizacion de  -->
