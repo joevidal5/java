@@ -15,6 +15,17 @@ footer{
     margin-top: 11%;
     height: 16%;
 }
+
+.products{
+    padding: 15%;
+    background-position: center top;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 95px;
+    background-size: cover;
+  
+  }
+
 aside{
     background-color: var(--color-mas-usado);
     text-c;
@@ -131,3 +142,24 @@ footer div{
     display: flex;
 }
 
+
+@media (max-width: 650px) {
+
+    .main_section{
+      padding: 5%;
+    }
+    .products{
+      display: block;
+      height: auto;
+      padding: 5%;
+    }
+    .product{
+      margin-top: auto;
+    }
+    .beneficios{
+      display: initial;
+    }
+    .mentions{
+      display: initial;
+    }
+  }
