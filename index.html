@@ -40,14 +40,14 @@
                     <img src = "img/ajustes1.png" class = "img-fluid"></img>
                 </button>
                 <div class="dropdown-menu">
-                    <button class="dropdown-item" onclick=" ocultar('home'); PVenta.cargoParaEditar();mostrar('modificacion');">Modificar datos</button>
+                    <button class="dropdown-item" onclick=" ocultar('home'); ocultar('faqs');PVenta.cargoParaEditar();mostrar('modificacion');">Modificar datos</button>
                     <button class="dropdown-item" onclick="PVenta.deleteCurrentUser();">Borrar usuario</button>
-                    <button class="dropdown-item" onclick="PVenta.cerrarSesion();" >Cerrar Sesion</button>
+                    <button class="dropdown-item" onclick="PVenta.cerrarSesion();ocultar('faqs');" >Cerrar Sesion</button>
                 </div>
                 <button type="button" class="btn btn-primary " id="botonCompras">
-                    <img src = "img/carrito.png" onclick="mostrar('carrito'); ocultar('home'); ocultar('equipos'); ocultar('liquidos');ocultar('repuestos'); ocultar('sesion')" class = "img-fluid"></img>
+                    <img src = "img/carrito.png" onclick="mostrar('carrito');ocultar('faqs'); ocultar('home'); ocultar('equipos'); ocultar('liquidos');ocultar('repuestos'); ocultar('sesion')" class = "img-fluid"></img>
                 </button>
-                <button class="btn btn-primary " id="botonAgregar" onclick="mostrar('cargarProducto'); ocultar('home'); " style="display: none;"> Agregar productos</button>
+                <button class="btn btn-primary " id="botonAgregar" onclick="mostrar('cargarProducto'); ocultar('home');ocultar('faqs'); " style="display: none;"> Agregar productos</button>
 
             </div>
         </div>
@@ -125,6 +125,9 @@
             <p>E-Mail: <input type="text" name="mail" id="mailEdit"></p><br>
             <button onclick="PVenta.updateUsuario();">Guardar Cambios</button>
         </div>
+        <div>
+            <a type="button" onclick="mostrar('home');ocultar('modificacion');" class="btn btn-outline-success">Volver a la pagina principal </a>
+        </div>
     </div>
     <!--Equipos-->
     <div class="container" id = "equipos" style = "display: none;">
@@ -171,16 +174,18 @@
             <option value="1">Liquidos</option>
             <option value="2">Repuestos</option>
             <option value="3">Equipos</option>
-          </select>
-          <div style="display:">
-                <p>Ingrese el nombre del producto: <input type="text" id="nombreProducto"></p><br>
-                <p>Precio del producto: <input type="text" name="" id="precioProducto"> </p><br>
-                <p>Cantidad de productos: <input type="text" id="cantidadProducto"></p>
-                <p>Descripcion del producto: <input type="text" id="descripcionProducto"></p><br>
-                <p><input type = "file" id = "imagenProducto"></p>
-                <button onclick="PVenta.cargarProducto();">Cargar producto</button>
-          </div>
-          
+        </select>
+        <div>
+            <p>Ingrese el nombre del producto: <input type="text" id="nombreProducto"></p><br>
+            <p>Precio del producto: <input type="text" name="" id="precioProducto"> </p><br>
+            <p>Cantidad de productos: <input type="text" id="cantidadProducto"></p>
+            <p>Descripcion del producto: <input type="text" id="descripcionProducto"></p><br>
+            <p><input type = "file" id = "imagenProducto"></p>
+            <button onclick="PVenta.cargarProducto();">Cargar producto</button>
+        </div>
+        <div>
+            <a type="button" onclick="mostrar('home');ocultar('cargarProducto');" class="btn btn-outline-success">Volver a la pagina principal </a>
+        </div>
     </div>
     <!--Liquidos-->
     <div class="container" id = "liquidos" style = "display: none;">
@@ -203,10 +208,55 @@
             <button type="button" id="vPrincipal" class="btn btn-success btn-lg btn-block">Volver a la pagina principal</button>
         </div>
     </div>
-    <!-- Finalizacion de  -->
-    <footer id="sticky-footer" class="py-4 bg-azure text-white-50">
+    <div class="container" id = "faqs" style="display: none;">
+        <div>
+            <hr>
+            <h2>¿Que es un vaper?</h2>
+            <hr>
+            <h5>
+                El cigarrillo o cigarro electrónico, también llamado (en inglés 
+                vaporizador, vapeador) es un sistema electrónico inhalador diseñado en su origen 
+                para simular el consumo de tabaco, sin quemar realmente tabaco, diferenciándose del 
+                cigarrillo tradicional.
+            </h5>
+            <hr>
+            <h2>¿Sierve para dejar de gumar?</h2>
+            <h5>
+                No se recomienda el uso de cigarrillos electrónicos como una forma (estrategia) para dejar de fumar.
+            </h5>
+            <hr>
+            <h2>¿Son buenos para la salud?</h2>
+            <h5>
+                El aerosol del cigarrillo electrónico contiene un número menor y niveles más bajos de la mayoría 
+                de los tóxicos que el humo de los cigarrillos de tabaco. La exposición a la nicotina y a los tóxicos 
+                de la aerosolización de los ingredientes del cigarrillo electrónico depende de las características del usuario y del dispositivo.
+            </h5>
+            <hr>
+            <h3>Envianos tu consulta en el siguiente formulario!!!</h3>
+            <form action="POST">
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" class="form-control" style="margin: 1%;" placeholder="Nombre Completo">
+                    </div>
+                    <div class="col">
+                        <input type="text" name="email" style="margin: 1%;" class="form-control" placeholder="E-mail">
+                    </div>
+                </div>
+                <div class="col">
+                    <textarea class="form-control" id="mensaje" rows="3" style="margin: 1%;" placeholder="Escriba su consulta aqui"></textarea>
+                </div>
+                <button class="btn btn-primary "  value="Enviar consulta" style="margin: 1%;" class="btn btn-primary btn-block">Enviar formulario</button>
+            </form>
+        </div>
+        <div>
+            <a type="button" onclick="mostrar('home');ocultar('faqs');" class="btn btn-outline-success">Volver a la pagina principal </a>
+        </div>
+      </div>
+      <!-- Finalizacion de  -->
+      <footer id="sticky-footer" class="py-4 bg-azure text-white-50">
         <div class="container text-center">
-            <small>Otro diseños:
+            <small>
+                <a type="text" onclick="ocultar('liquidos');ocultar('equipos');ocultar('repuestos');ocultar('home');ocultar('carrito');ocultar('login');ocultar('registro');ocultar('administrador');ocultar('cargarProducto');ocultar('liquidos');ocultar('equipos');ocultar('repuestos');ocultar('home');ocultar('login');ocultar('registro');ocultar('administrador');ocultar('cargarProducto');ocultar('modificacion');mostrar('faqs')" href="#">Faqs</a>
             </small>
         </div>
       </footer>
