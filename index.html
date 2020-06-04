@@ -47,7 +47,7 @@
                 <button type="button" class="btn btn-primary " id="botonCompras">
                     <img src = "img/carrito.png" onclick="mostrar('carrito'); ocultar('home'); ocultar('equipos'); ocultar('liquidos');ocultar('repuestos'); ocultar('sesion')" class = "img-fluid"></img>
                 </button>
-                <button class="btn btn-primary " id="botonAgregar"> Agregar productos</button>
+                <button class="btn btn-primary" id="botonAgregar" onclick="mostrar('cargarProducto'); ocultar('home'); " style="display: none;"> Agregar productos</button>
             </div>
         </div>
     </header>
@@ -164,8 +164,8 @@
         </div>
     </div>
     <!-- Carga de productos -->
-    <div class="container" id = "cargarProducto" style = "display: ;">
-        <select class="browser-default custom-select">
+    <div class="container" id = "cargarProducto" style = "display: none;">
+        <select class="browser-default custom-select" id="selecCategori">
             <option selected>Seleccion una categoria de productos</option>
             <option value="1">Liquidos</option>
             <option value="2">Repuestos</option>
@@ -173,8 +173,10 @@
           </select>
           <div style="display:">
                 <p>Ingrese el nombre del producto: <input type="text" id="nombreProducto"></p><br>
-                <p>Precio del producto: <input type="text" name="" id="Precio"> </p><br>
-                <p>Descripcion del producto: <input type="text" id="Descripcion"></p><br>
+                <p>Precio del producto: <input type="text" name="" id="precioProducto"> </p><br>
+                <p>Cantidad de productos: <input type="text" id="cantidadProducto"></p>
+                <p>Descripcion del producto: <input type="text" id="descripcionProducto"></p><br>
+                <button onclick="PVenta.cargarProducto();">Cargar producto</button>
           </div>
           
     </div>
