@@ -35,7 +35,7 @@
                 <h1>Hola, </h1>
                 <h1 id="nameSesion" ></h1>
             </div>
-            <div class="dropdown" align = "right">
+            <div class="dropdown" align = "right" style = "display: flex;">
                 <button type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src = "img/ajustes1.png" class = "img-fluid"></img>
                 </button>
@@ -47,17 +47,17 @@
                 <button type="button" class="btn btn-primary " id="botonCompras">
                     <img src = "img/carrito.png" onclick="mostrar('carrito'); ocultar('home'); ocultar('equipos'); ocultar('liquidos');ocultar('repuestos'); ocultar('sesion')" class = "img-fluid"></img>
                 </button>
-                <button id="botonAgregar" onclick="mostrar('cargarProducto'); ocultar('home'); " style="display: none;"> Agregar productos</button>
+                <button class="btn btn-primary " id="botonAgregar" onclick="mostrar('cargarProducto'); ocultar('home'); " style="display: none;"> Agregar productos</button>
 
             </div>
         </div>
     </header>
     <!-- Inicio de informacion  -->
     <div class="container" id = "home">
-        <div  style = "display: flex; padding-top: 1%;">
-            <button type="button" onclick="mostrar('liquidos');ocultar('home');" class="btn btn-danger btn-lg btn-block">E-liquids</button>
-            <button type="button" onclick="mostrar('equipos');ocultar('home');" class="btn btn-warning btn-lg btn-block">Equipos</button>
-            <button type="button" onclick="mostrar('repuestos');ocultar('home');" class="btn btn-success btn-lg btn-block">Repuestos</button>
+        <div class = "row" style = "display: flex; padding-top: 1%;">
+            <button type="button" onclick="mostrar('liquidos');ocultar('home');" class="btn btn-danger btn-lg col-4">E-liquids</button>
+            <button type="button" onclick="mostrar('equipos');ocultar('home');" class="btn btn-warning btn-lg col-4">Equipos</button>
+            <button type="button" onclick="mostrar('repuestos');ocultar('home');" class="btn btn-success btn-lg col-4">Repuestos</button>
         </div>
         <div id="carrusel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
