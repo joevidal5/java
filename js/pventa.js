@@ -226,6 +226,29 @@ let PVenta = {
         window.location.reload(true);
     },
 
+
+    sendEmail(){
+        let nombre = document.getElementById('nameQuestion').value;
+        let mail = document.getElementById('mailQuestion').value;
+        let consulta = document.getElementById('mensaje').value;
+
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "m.olmedo@itecriocuarto.org.ar",
+            Password : "joopkkajexrqqrtf",
+            To : "j.vidal@itecriocuarto.org.ar",
+            From : "m.olmedo@itecriocuarto.org.ar",
+            Subject : "Consulta",
+            Body : "<html><h2>"+nombre+"</h2><strong>Posee esta cosulta "+ consulta + " </strong><br></br><em>Para comunicarte con el remitente de esta consulta tratar con: "+ mail +"el joel se la come</em></html>"
+        }).then(
+          alert("su consulta fue enviada")
+        );
+        window.location.reload(true);
+
+
+
+    },
+
     init:function(){
         //cargamos todos nuestros array del localStorage
         let data = myStorage.getItem('datajson');
