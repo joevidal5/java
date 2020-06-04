@@ -226,36 +226,80 @@ let PVenta = {
 
     init:function(){
         //cargamos todos nuestros array del localStorage
-    let data = myStorage.getItem('datajson');
-    if (data){
-        data = JSON.parse(data);
-        this._usuarios = data.usuarios;
-        this._categorias = data.categorias;
-        this._productos = data.productos;
-        this._facturas = data.facturas;
-        this._detFacturas = data.detFacturas;
-        this._currentUser = data.currentUser;
-        this._cantidad = data.cantidadUsers;
+        let data = myStorage.getItem('datajson');
+        if (data){
+            data = JSON.parse(data);
+            this._usuarios = data.usuarios;
+            this._categorias = data.categorias;
+            this._productos = data.productos;
+            this._facturas = data.facturas;
+            this._detFacturas = data.detFacturas;
+            this._currentUser = data.currentUser;
+            this._cantidad = data.cantidadUsers;
+            this._cantidadProductos = data.cantidadProductos;
 
-        if (this._currentUser['current'] == 'True'){
-            document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
-            ocultar('sesion');
-            mostrar('sesionName');
-            if (this._usuarios[0]['username']== this._currentUser['username']){
-                console.log('no anda')
-                mostrar('botonAgregar');
-            }else{
-                ocultar('botonAgregar')
+            if (this._currentUser['current'] == 'True'){
+                document.getElementById('nameSesion').innerHTML = this._currentUser['username'];
+                ocultar('sesion');
+                mostrar('sesionName');
+                if (this._usuarios[0]['username']== this._currentUser['username']){
+                    console.log('no anda')
+                    mostrar('botonAgregar');
+                }else{
+                    ocultar('botonAgregar')
+                }
+            }  
+        }else{
+            this._currentUser={
+                current: 'none',
+                username: 'none',
             }
-        }  
-    }else{
-        this._currentUser={
-            current: 'none',
-            username: 'none',
+            this.saveData();
         }
-        this.saveData();
-    }
     
+        let divLiquidos = document.getElementById('liquidos');
+        let divContenedorLiquidos = document.createElement('div');
+        divContenedorLiquidos.className += 'd-flex justify-content-center';
+        console.log("asd")
+        for (var j = 0; j<this._cantidadProductos; j++){
+            console.log("entre en el for");
+            if(this._productos[j]['categoria'] == 1){
+                console.log('encontre un liquido :'+this._productos[j]['nombre']);
+                var divProducto = document.createElement('div');
+                divProducto.className += 'card mx-4';
+                divProducto.style.width+= "18rem" ;
+                let carta = document.createElement('div');
+                carta.className += "card-body";
+                let tituloProducto = document.createElement('h5');
+                tituloProducto.className += 'card-title';
+                let contenidoTitulo = document.createTextNode(this._productos[j]['nombre']);
+                let precioProducto = document.createElement('h2');
+                let contenidoPrecio = document.createTextNode('$'+this._productos[j]['precio']);
+
+                let stockProducto = document.createElement('h6');
+                let contenidoStock = document.createTextNode('Stock de producto: ' +this._productos[j]['stock'])
+
+                let descripProduc = document.createElement('p');
+                let contenidoDescr = document.createTextNode(this._productos[j]['decripcion']);
+
+
+
+
+                tituloProducto.appendChild(contenidoTitulo);
+                precioProducto.appendChild(contenidoPrecio);
+                stockProducto.appendChild(contenidoStock);
+                descripProduc.appendChild(contenidoDescr);
+
+                carta.appendChild(tituloProducto);
+                carta.appendChild(precioProducto);
+                carta.appendChild(stockProducto);
+                carta.appendChild(descripProduc);
+
+                divProducto.appendChild(carta);
+            }
+            divContenedorLiquidos.appendChild(divProducto);
+            divLiquidos.appendChild(divContenedorLiquidos);
+        }
         
     }
 
