@@ -89,7 +89,20 @@ let PVenta = {
         let precioP = document.getElementById('precioProducto').value;
         let descripP = document.getElementById('descripcionProducto').value;
         let cantidaP = document.getElementById('cantidadProducto').value;
-        let imgP = document.getElementById('imagenProducto').value;
+        var imgP = document.getElementById("file").files;
+        var fileToLoad = imgP[0];
+        var fileReader = new FileReader();
+        alert ('Empiezo base64');
+        fileReader.addEventListener('load', function(e) {
+            fileToLoad = e.target.result; // <--- data: base64
+            alert ('Convierto en base64 ' + fileToLoad);
+
+            imgP = fileToLoad;
+            console.log(imgP);
+        });
+        alert('Llamo a la funcion');
+        fileReader.readAsDataURL(fileToLoad);
+        alert ('Termino la base64' + imgP);
         let producto = {
             idP: idp,
             img: imgP,
@@ -99,11 +112,12 @@ let PVenta = {
             stock: cantidaP,
             categoria: categoriap,
         }
+        
         this._productos.push(producto);
         this.saveData();
+        alert('Cargo en el storage');
 
     },
-
 
     loginUsuario (){
         let usuario = document.getElementById("usuario").value;
@@ -295,6 +309,10 @@ let PVenta = {
                 divProducto.style.width+= "18rem" ;
                 let carta = document.createElement('div');
                 carta.className += "card-body";
+                let imgProducto = document.createElement('img');
+                imgProducto.className += 'img pequenia';
+                imgProducto.id += 'imgTest'
+                imgProducto.src += this._productos[j]['img'];
                 let tituloProducto = document.createElement('h5');
                 tituloProducto.className += 'card-title';
                 let contenidoTitulo = document.createTextNode(this._productos[j]['nombre']);
@@ -315,6 +333,7 @@ let PVenta = {
                 stockProducto.appendChild(contenidoStock);
                 descripProduc.appendChild(contenidoDescr);
 
+                carta.append(imgProducto)
                 carta.appendChild(tituloProducto);
                 carta.appendChild(precioProducto);
                 carta.appendChild(stockProducto);
