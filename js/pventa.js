@@ -104,7 +104,8 @@ let PVenta = {
 
     cargarProducto(){
         let dataImg = myStorage.getItem('images')
-        var imgP = dataImg;
+        dataImg = dataImg.split('"');
+        var imgP = dataImg[1];
         alert('Nueva base 64' + dataImg);
         this._cantidadProductos = this._cantidadProductos + 1 ;
         let idp = this._cantidadProductos;
