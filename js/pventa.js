@@ -80,7 +80,32 @@ let PVenta = {
         
     },
 
+    base64(){
+        let imgP = document.getElementById("file").files;
+        var fileToLoad = imgP[0];
+        let fileReader = new FileReader();
+        alert ('Empiezo base64');
+        fileReader.addEventListener('load', function(e) {
+            fileToLoad = e.target.result; // <--- data: base64
+            alert ('Convierto en base64 ' + fileToLoad);
+
+            imgP = fileToLoad;
+            console.log(imgP);
+
+            myStorage.setItem('images',JSON.stringify(imgP));
+
+            
+        });
+        alert('Llamo a la funcion');
+        fileReader.readAsDataURL(fileToLoad);
+        alert ('Termino la base64' + imgP);
+
+    },
+
     cargarProducto(){
+        let dataImg = myStorage.getItem('images')
+        var imgP = dataImg;
+        alert('Nueva base 64' + dataImg);
         this._cantidadProductos = this._cantidadProductos + 1 ;
         let idp = this._cantidadProductos;
         let categoriap = document.getElementById('selecCategori').value;
@@ -89,20 +114,17 @@ let PVenta = {
         let precioP = document.getElementById('precioProducto').value;
         let descripP = document.getElementById('descripcionProducto').value;
         let cantidaP = document.getElementById('cantidadProducto').value;
-        var imgP = document.getElementById("file").files;
-        var fileToLoad = imgP[0];
-        var fileReader = new FileReader();
-        alert ('Empiezo base64');
-        fileReader.addEventListener('load', function(e) {
-            fileToLoad = e.target.result; // <--- data: base64
-            alert ('Convierto en base64 ' + fileToLoad);
+        
+            /*let img = {
+                idP: idp,
+                image: imgP,
+            }
+            myStorage.setItem('images',JSON.stringify(img));
+            let dataImg = myStorage.getItem('images');
+            this._imagenes.push(img);
+            this.saveData();*/
 
-            imgP = fileToLoad;
-            console.log(imgP);
-        });
-        alert('Llamo a la funcion');
-        fileReader.readAsDataURL(fileToLoad);
-        alert ('Termino la base64' + imgP);
+
         let producto = {
             idP: idp,
             img: imgP,
@@ -115,7 +137,6 @@ let PVenta = {
         
         this._productos.push(producto);
         this.saveData();
-        alert('Cargo en el storage');
 
     },
 
@@ -311,8 +332,10 @@ let PVenta = {
                 carta.className += "card-body";
                 let imgProducto = document.createElement('img');
                 imgProducto.className += 'img pequenia';
-                imgProducto.id += 'imgTest'
+                imgProducto.id += 'imgTest';
                 imgProducto.src += this._productos[j]['img'];
+                //imgProducto.src += this._productos[j]['img'];
+                //imgProducto.setAttribute('src', this._productos[j]['img']);
                 let tituloProducto = document.createElement('h5');
                 tituloProducto.className += 'card-title';
                 let contenidoTitulo = document.createTextNode(this._productos[j]['nombre']);
@@ -326,14 +349,13 @@ let PVenta = {
                 let contenidoDescr = document.createTextNode(this._productos[j]['decripcion']);
 
 
-
-
+                //imgProducto.appendChild(contenidoImg);
                 tituloProducto.appendChild(contenidoTitulo);
                 precioProducto.appendChild(contenidoPrecio);
                 stockProducto.appendChild(contenidoStock);
                 descripProduc.appendChild(contenidoDescr);
 
-                carta.append(imgProducto)
+                carta.appendChild(imgProducto);
                 carta.appendChild(tituloProducto);
                 carta.appendChild(precioProducto);
                 carta.appendChild(stockProducto);
