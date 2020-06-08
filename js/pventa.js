@@ -84,21 +84,17 @@ let PVenta = {
         let imgP = document.getElementById("file").files;
         var fileToLoad = imgP[0];
         let fileReader = new FileReader();
-        alert ('Empiezo base64');
         fileReader.addEventListener('load', function(e) {
             fileToLoad = e.target.result; // <--- data: base64
-            alert ('Convierto en base64 ' + fileToLoad);
+            console.log ('Convierto en base64 ' + fileToLoad);
 
             imgP = fileToLoad;
-            console.log(imgP);
 
             myStorage.setItem('images',JSON.stringify(imgP));
 
             
         });
-        alert('Llamo a la funcion');
         fileReader.readAsDataURL(fileToLoad);
-        alert ('Termino la base64' + imgP);
 
     },
 
@@ -106,7 +102,6 @@ let PVenta = {
         let dataImg = myStorage.getItem('images')
         dataImg = dataImg.split('"');
         var imgP = dataImg[1];
-        alert('Nueva base 64' + dataImg);
         this._cantidadProductos = this._cantidadProductos + 1 ;
         let idp = this._cantidadProductos;
         let categoriap = document.getElementById('selecCategori').value;
@@ -335,8 +330,6 @@ let PVenta = {
                 imgProducto.className += 'img pequenia';
                 imgProducto.id += 'imgTest';
                 imgProducto.src += this._productos[j]['img'];
-                //imgProducto.src += this._productos[j]['img'];
-                //imgProducto.setAttribute('src', this._productos[j]['img']);
                 let tituloProducto = document.createElement('h5');
                 tituloProducto.className += 'card-title';
                 let contenidoTitulo = document.createTextNode(this._productos[j]['nombre']);
@@ -350,7 +343,6 @@ let PVenta = {
                 let contenidoDescr = document.createTextNode(this._productos[j]['decripcion']);
 
 
-                //imgProducto.appendChild(contenidoImg);
                 tituloProducto.appendChild(contenidoTitulo);
                 precioProducto.appendChild(contenidoPrecio);
                 stockProducto.appendChild(contenidoStock);
