@@ -22,34 +22,36 @@
 
 <body>
     <header>
-        <div class="container">
-            <div style = "display: flex;">
-                <h1 class="letraHeader">Aguante el VAPO</h1>
-                <img  src="img/vapo.png"  class="img-fluid pequenia">
-            </div>
-        </div>
-        <div style="padding-right:10%;padding-top: 1.5%;" id = "sesion">
-            <a type="button" onclick="mostrar('login');ocultar('home');ocultar('sesion');" class="btn btn-primary">Iniciar sesion</a>
-        </div>
-        <div id= "sesionName" style = "padding-right:10%;padding-top: 1.5%; display: none ;">
-            <div style = "display: flex;">
-                <h1>Hola, </h1>
-                <h1 id="nameSesion" ></h1>
-            </div>
-            <div class="dropdown" align = "right" style = "display: flex;">
-                <button type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img src = "img/ajustes1.png" class = "img-fluid"></img>
-                </button>
-                <div class="dropdown-menu">
-                    <button class="dropdown-item" onclick=" ocultar('home'); ocultar('faqs');PVenta.cargoParaEditar();mostrar('modificacion');">Modificar datos</button>
-                    <button class="dropdown-item" onclick="PVenta.deleteCurrentUser();">Borrar usuario</button>
-                    <button class="dropdown-item" onclick="PVenta.cerrarSesion();ocultar('faqs');" >Cerrar Sesion</button>
+        <div class = "container">
+            <div class = "row">
+                    <div class = "col-lg-4 col-md-6 col-sm-4 col-xs-12" style = "display: flex;">
+                        <h1 class="letraHeader">Aguante el VAPO</h1>
+                        <img  src="img/vapo.png"  class="img-fluid pequenia">
+                    </div>
+                <div class = "col-lg-4 col-md-6 col-sm-4 col-xs-12" id = "sesion">
+                    <a type="button" style = "padding-left: 40%;" onclick="mostrar('login');ocultar('home');ocultar('sesion');" class="btn btn-primary">Iniciar sesion</a>
                 </div>
-                <button type="button" class="btn btn-primary " id="botonCompras">
-                    <img src = "img/carrito.png" onclick="mostrar('carrito');ocultar('faqs'); ocultar('home'); ocultar('equipos'); ocultar('liquidos');ocultar('repuestos'); ocultar('sesion')" class = "img-fluid"></img>
-                </button>
-                <button class="btn btn-primary " id="botonAgregar" onclick="mostrar('cargarProducto'); ocultar('home');ocultar('faqs'); " style="display: none;"> Agregar productos</button>
+                <div class = "col-lg-4 col-md-6 col-sm-4 col-xs-12"  id= "sesionName" style = "display: none ;">
+                    <div style = "display: flex;">
+                        <h1>Hola, </h1>
+                        <h1 id="nameSesion" ></h1>
+                    </div>
+                    <div class="dropdown" style = "display: flex;">
+                        <button type="button" class="btn btn-primary dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src = "img/ajustes1.png"></img>
+                        </button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" onclick=" ocultar('home'); ocultar('faqs');PVenta.cargoParaEditar();mostrar('modificacion');">Modificar datos</button>
+                            <button class="dropdown-item" onclick="PVenta.deleteCurrentUser();">Borrar usuario</button>
+                            <button class="dropdown-item" onclick="PVenta.cerrarSesion();ocultar('faqs');" >Cerrar Sesion</button>
+                        </div>
+                        <button type="button" class="btn btn-primary " id="botonCompras">
+                            <img src = "img/carrito.png" onclick="mostrar('carrito');ocultar('faqs'); ocultar('home'); ocultar('equipos'); ocultar('liquidos');ocultar('repuestos'); ocultar('sesion')"></img>
+                        </button>
+                        <button class="btn btn-primary " id="botonAgregar" onclick="mostrar('cargarProducto'); ocultar('home');ocultar('faqs'); " style="display: none;"> Agregar productos</button>
 
+                    </div>
+                </div>
             </div>
         </div>
     </header>

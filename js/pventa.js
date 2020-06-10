@@ -315,14 +315,14 @@ let PVenta = {
     
         let divLiquidos = document.getElementById('liquidos');
         let divContenedorLiquidos = document.createElement('div');
-        divContenedorLiquidos.className += 'd-flex justify-content-center';
+        divContenedorLiquidos.className += 'd-flex justify-content-center row';
         console.log("asd")
         for (var j = 0; j<this._cantidadProductos; j++){
             console.log("entre en el for");
             if(this._productos[j]['categoria'] == 1){
                 console.log('encontre un liquido :'+this._productos[j]['nombre']);
                 var divProducto = document.createElement('div');
-                divProducto.className += 'card mx-4';
+                divProducto.className += 'col-4';
                 divProducto.style.width+= "18rem" ;
                 let carta = document.createElement('div');
                 carta.className += "card-body";
