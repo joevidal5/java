@@ -24,16 +24,24 @@
     <header>
         <div class = "container-fluid">
             <div class = "row">
-                    <div class = "col-lg-5 col-xs-12" style = "display: flex;">
+                    <div class = "btn-lg col-lg-4 col-md-4 col-xs-12" style = "display: flex;">
                         <h1 class="letraHeader">Aguante el VAPO</h1>
                         <img  src="img/vapo.png"  class="img-fluid pequenia">
                     </div>
+<<<<<<< HEAD
                    
                 <div class = "col-xs-12" id = "sesion" style="padding-left: 40%; padding-top: 2%;">
                     <a type="button" onclick="mostrar('login');ocultar('home');ocultar('sesion');" class="btn btn-primary">Iniciar sesion</a>
                 </div>
                 <div class = "col-lg-7 col-xs-12"  id= "sesionName" style = "display: none; padding-left: 40%;">
                     <div style = "display: flex; ">
+=======
+                <div class = "btn-lg col-lg-4 col-md-4 col-xs-12" id = "sesion">
+                    <a type="button" style = "padding-left: 40%;" onclick="mostrar('login');ocultar('home');ocultar('sesion');" class="btn btn-primary">Iniciar sesion</a>
+                </div>
+                <div class = "col-lg-4 col-md-4 col-xs-12"  id= "sesionName" style = "display: none ; ">
+                    <div style = "display: flex;">
+>>>>>>> 1aed7c37dc6416c5c335701e554b1230ac96fd15
                         <h1>Hola, </h1>
                         <h1 id="nameSesion" ></h1>
                     </div>
@@ -59,9 +67,9 @@
     <!-- Inicio de informacion  -->
     <div class="container" id = "home">
         <div class = "row" style = "display: flex; padding-top: 1%;">
-            <button type="button" onclick="mostrar('liquidos');ocultar('home');" class="btn btn-danger btn-lg col-4">E-liquids</button>
-            <button type="button" onclick="mostrar('equipos');ocultar('home');" class="btn btn-warning btn-lg col-4">Equipos</button>
-            <button type="button" onclick="mostrar('repuestos');ocultar('home');" class="btn btn-success btn-lg col-4">Repuestos</button>
+            <button type="button" onclick="mostrar('liquidos');ocultar('home');" class="btn btn-danger btn-lg col-lg-4 col-md-4 col-xs-12">E-liquids</button>
+            <button type="button" onclick="mostrar('equipos');ocultar('home');" class="btn btn-warning btn-lg col-lg-4 col-md-4 col-xs-12">Equipos</button>
+            <button type="button" onclick="mostrar('repuestos');ocultar('home');" class="btn btn-success btn-lg col-lg-4 col-md-4 col-xs-12">Repuestos</button>
         </div>
         <div id="carrusel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
